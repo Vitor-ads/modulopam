@@ -44,6 +44,7 @@ int main(int argc, char *argv[]){
 	while(system(command2) != 0){
 	    command2 = "lsblk --output SERIAL /dev/sd";
 	    command2[30] = var;
+	    printf("%s", command2);
 	    var = var + 1;
 	}
 	if(system("lsblk --output SERIAL /dev/sdb") == 0)
