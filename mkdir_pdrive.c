@@ -37,7 +37,7 @@ void mkdirusb(){
 // Mostra ao usuário o que está acontecendo
 int main(int argc, char *argv[]){
 	// Se o pen drive não estiver conectado, essa variável não retornará zero
-	if(system("lsblk --output SERIAL /dev/sdb") == 0)
+	if(system("lsblk --output SERIAL /dev/sdc") == 0)
     {
 	
 	puts("\n\n-> Attention, pendrive must be plugged in");
@@ -59,7 +59,7 @@ int main(int argc, char *argv[]){
 	// Esse comando acima pega o serial tambem, mas estávamos com erro pois ele tinha duas linhas
 
 	// Esse comando abaixo pega o serial do pen drive e grava em um arquivo de texto
-	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pdrive/pen_drive.txt");
+	system("/sbin/udevadm info -n /dev/sdc -a | grep serial > /etc/pam.d/pdrive/pen_drive.txt");
      	sleep(1);
     
     }
