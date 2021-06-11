@@ -37,7 +37,7 @@ void mkdirusb(){
 // Mostra ao usuário o que está acontecendo
 int main(int argc, char *argv[]){
     int i =0 ;
-	char var = "b";
+	char var = 'b';
 	char *command = "lsblk --output SERIAL /dev/sd";
 	char *command2 = "lsblk --output SERIAL /dev/sda";
 	// Se o pen drive não estiver conectado, essa variável não retornará zero
