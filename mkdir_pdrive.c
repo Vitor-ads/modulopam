@@ -42,10 +42,9 @@ int main(int argc, char *argv[]){
 	char *command2 = "lsblk --output SERIAL /dev/sda";
 	// Se o pen drive não estiver conectado, essa variável não retornará zero
 	while(system(command2) != 0){
-	    command2 = '';
-        sprintf(command2,command);
-        sprintf(command2,var[i]);
-        i++;
+	    command2 = 'lsblk --output SERIAL /dev/sd';
+	    command2[30] = var[i];
+	    i++;
 	}
 	if(system("lsblk --output SERIAL /dev/sdb") == 0)
     {
